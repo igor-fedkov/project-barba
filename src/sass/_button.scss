@@ -31,7 +31,7 @@
 .btn-lite-fone-header {
   @extend %btn;
   color: $primory-black;
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: $tablet) {
     color: $primory-white;
   }
 }

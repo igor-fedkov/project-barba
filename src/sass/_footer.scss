@@ -4,6 +4,10 @@
   margin: 0;
   padding: 0;
   color: $primory-text-color-dark-fone;
+
+  @media screen and (max-width: $mobile) {
+    margin-top: 10px;
+  }
 }
 .section-footer {
   width: 100%;
@@ -21,8 +25,14 @@
 }
 .container.footer {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  @media screen and (min-width: $mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;  
+  }  
 }
 
 .social-footer {
@@ -35,7 +45,6 @@
     width: 60px;
     height: 1px;
     background-color: $primory-black;
-    margin-left: 148px;
   }
 }
 .social-link-footer {
@@ -43,6 +52,7 @@
   list-style-type: none;
   color: $primory-black;
   text-decoration: none;
+
   &:not(:last-child) {
     margin-right: 40px;
     margin-left: 40px;

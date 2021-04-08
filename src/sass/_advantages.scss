@@ -1,104 +1,112 @@
-.section-title-lite-fone {
-  @extend %section-title;
-  color: $primory-black;
+.advantages {
+	color: $primory-black;
+	margin: 84px auto;
+	
+	@media screen and (min-width: $tablet) {
+		margin: 100px 39px;
+	}
 
-  &::before {
-    @extend %before;
-    background: $primory-black;
-  }
-}
-.position {
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 0;
-  margin-top: 44px;
-}
+	@media screen and (min-width: $desktop) {
+		margin: 130px 55px;
+	}
 
-.citation-lite-fone {
-  @extend %citation;
-  color: $primory-text-color-lite-fone;
-}
+	h2 {
+		margin-bottom: 20px;
+	}
 
-.title-lite-fone {
-  @extend %title;
-  color: $primory-black;
-}
+	.container {
+		& > div {
+			max-width: 500px;
+		}
 
-@media screen and (min-width: $tablet) {
-  .position-title {
-    width: 500px;
-    height: 213px;
-  }
-  .position {
-    margin-top: 84px;
-    margin-left: 239px;
-  }
-}
-@media screen and (min-width: $desktop) {
-  .advantages {
-    position: relative;
-    height: 582px;
-  }
-  .position-title {
-    width: 500px;
-    position: absolute;
-    right: 125px;
-    top: 130px;
-  }
-  .position {
-    margin: 0 auto;
-    width: 370px;
-    position: absolute;
-    left: 155px;
-    margin: 0 auto;
-  }
-}
+		@media screen and (min-width: $desktop) {
+			display: flex;
+			padding-left: 155px;
+			padding-right: 125px;
+			flex-direction: row-reverse;
+			justify-content: space-between;
+		}
+	}
 
-.list {
-  font: normal bold 42px/57px Open Sans, serif;
-  letter-spacing: 0.04em;
-  color: $primory-black;
+	.section-description {
+		margin: 0 0 44px 0;
 
-  width: 193px;
-  height: 133px;
-  text-align: center;
-  background: #f7f7f7;
-  &.centered {
-    padding: 20px 25px;
-  }
-  .item {
-    color: #ff6c00;
-    width: 13px;
-    height: 22px;
-    text-align: center;
-  }
-}
-@media screen and (min-width: $tablet) {
-  .list {
-    width: 210px;
-    height: 133px;
-    &.centered {
-      padding: 20px 35px;
-    }
-  }
-}
-@media screen and (min-width: $desktop) {
-  .list {
-    width: 170px;
-    height: 133px;
-    &.centered {
-      padding: 20px 15px;
-    }
-  }
-}
+		font-size: 18px;
+		line-height: 1.67em;
+		letter-spacing: 0.02em;
+		color: $primory-text-color-lite-fone;
+	}
 
-.list:nth-child(2n) {
-  margin-left: 30px;
-  margin-top: 30px;
-}
-.list-text {
-  font: normal 600 11px/15px Open Sans, serif;
-  letter-spacing: 0.04em;
-  color: $primory-black;
-}
-// .list-tex
+	.achievement-lists-container {
+		display: flex;
+		margin-left: auto;
+
+		// width: 100%;
+		// margin-right: auto;
+
+		@media screen and (min-width: $desktop) {
+			margin: 0;
+		}
+
+		.achievement-list {
+			max-width: 194px;
+
+			@media screen and (min-width: $tablet) {
+				max-width: 210px;
+			}
+
+			@media screen and (min-width: $desktop) {
+				margin-left: 0;
+				max-width: 170px;
+			}
+		}
+
+		.achievement-list:first-child {
+			margin-right: 30px;
+			margin-left: auto;
+		}
+
+		.achievement-list:last-child {
+			margin-top: 35px;
+		}
+
+		.achievement-list li:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		.achievements-item-container {
+			padding: 20px;
+			width: 100%;
+
+			background-color: $fone-advantages-footer-end;
+
+			.achievements-digit {
+				display: block;
+				margin-bottom: 6px;
+
+				font-size: 42px;
+				line-height: 1.36em;
+				text-align: center;
+				letter-spacing: 0.05em;
+			}
+
+			.sign-plus {
+				margin-left: 2px;
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 1em;
+				vertical-align: super;
+				color: $accent-orange;
+			}
+
+			.achievements-text {
+				margin: 0;
+				padding: 0;
+				font-weight: 600;
+				font-size: 11px;
+				line-height: 1.36em;
+				text-align: center;
+			}
+		} //.achievements-item-container
+	} //.achievement-list-container
+} //why-us

@@ -14,12 +14,41 @@ path {
   animation-timing-function: linear;
   animation-delay: 1000ms;
   animation-iteration-count: infinite;
-}
 
-@media screen and (min-width: 769px) {
-  .container-header {
+  animation-name: slide-back-img-mob;
+  max-width: 480px;
+  height: 580px;
+  background-image: url(../images/mobile/mobile-slider1@1x.jpg);
+  background-size: cover;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url(../images/mobile/mobile-slider1@2x.jpg);
+      animation-name: slide-back-img-mob2;
+    }
+  }
+
+  @media screen and (min-width: $mobile) {
+    margin: 0 0 0 auto;
+    animation-name: slide-back-img-tabl;
+    max-width: 609px;
+    height: 680px;
+    background-image: url(../images/tablet/tablet-slider1@1x.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      & {
+        background-image: url(../images/tablet/tablet-slider1@2x.jpg);
+        animation-name: slide-back-img-tabl2;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
     animation-name: slide-back-img-desk;
-    width: 1125px;
+    max-width: 1125px;
 
     height: 680px;
     background-image: url(../images/desktop/desktop-slider1@1x.jpg);
@@ -34,83 +63,41 @@ path {
   }
 }
 
-@media screen and (max-width: $mobile) {
-  .container-header {
-    animation-name: slide-back-img-mob;
-    width: 480px;
-    height: 580px;
-    background-image: url(../images/mobile/mobile-slider1@1x.jpg);
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background-image: url(../images/mobile/mobile-slider1@2x.jpg);
-        animation-name: slide-back-img-mob2;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: $tablet) {
-  .container-header {
-    animation-name: slide-back-img-tabl;
-    width: 609px;
-    height: 680px;
-    background-image: url(../images/tablet/tablet-slider1@1x.jpg);
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      & {
-        background-image: url(../images/tablet/tablet-slider1@2x.jpg);
-        animation-name: slide-back-img-tabl2;
-      }
-    }
-  }
-}
-
 .section-header {
   display: block;
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: $tablet) {
     padding-left: 159px;
   }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: $desktop) {
     padding-left: 155px;
     max-width: 1280px;
   }
 }
 
 .Logo {
-  fill: $primory-black;
-  @media screen and (max-width: $mobile) {
-    display: inline-block;
-    margin-left: 30px;
-    margin-top: 40px;
-    fill: $primory-white;
-  }
-  @media screen and (min-width: 481px) {
-    position: absolute;
-    left: 50px;
-    top: 30px;
-  }
-  @media screen and (min-width: 769px) {
-    left: 40px;
+  fill: $primory-white;
+  @media screen and (min-width: $tablet) {
+    fill: $primory-black;    
   }
 }
 
 .link-logo {
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: 40px;
   text-decoration: none;
-}
 
-.navigate {
-  @media screen and (max-width: $mobile) {
-    margin-top: 118px;
-    margin-left: 40px;
+  @media screen and (min-width: $tablet) {
+    position: absolute;
+    margin: 0;
+    left: 50px;
+    top: 30px;
   }
-  @media screen and (min-width: 481px) {
-    display: flex;
+  @media screen and (min-width: $desktop) {
+    left: 40px;
   }
 }
 
@@ -119,56 +106,49 @@ path {
   margin: 0px;
   list-style: none;
 
-  @media screen and (min-width: 481px) {
+  @media screen and (min-width: $tablet) {
+
+    padding-left: 40px;
     display: flex;
   }
 }
 
 .list-item-header {
   display: block;
-  @media screen and (max-width: $mobile) {
-    &:not(:last-child) {
-      margin-bottom: 24px;
-    }
+  &:not(:last-child) {
+    margin-bottom: 24px;
   }
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
-    margin-top: 52px;
-    margin-left: 24px;
+  @media screen and (min-width: $tablet) {
+    margin: 32px 0 0 24px;
   }
-  @media screen and (min-width: 769px) {
-    margin-top: 52px;
-    margin-left: 40px;
+  @media screen and (min-width: $desktop) {
+    margin: 52px 0 0 0;
   }
 }
 
-.item-tel {
-  display: block;
-  @media screen and (max-width: $mobile) {
-    margin-bottom: 24px;
-  }
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
-    margin-top: 20px;
-  }
-  @media screen and (min-width: 769px) {
-    margin-right: 40px;
-  }
-}
 .link-header {
+  display: block;
+  margin-bottom: 24px;
+
   font-family: $font-text;
   font-style: normal;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.33;
   letter-spacing: 0.1em;
-
-  color: $primory-white;
+  color: $primory-black;
   text-decoration: none;
-  border: 1px solid transparent;
   transition: color $trans-time-and-bezier;
-  @media screen and (max-width: $mobile) {
-    font-size: 18px;
-    line-height: 1.39;
-    color: $primory-black;
+
+  @media screen and (min-width: $tablet) {
+    margin: 20px 0 0 0;
+    
+    font-size: 12px;
+    color: $primory-white;    
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 40px 0 0;
   }
   &:hover,
   &:focus {
@@ -180,11 +160,11 @@ path {
 .text-section-header {
   margin-top: 112px;
   margin-left: 31px;
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     margin-top: 156px;
     margin-left: 120px;
   }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: $desktop) {
     margin-top: 204px;
     margin-left: 100px;
   }
@@ -192,50 +172,48 @@ path {
 
 .header-title {
   display: inline-block;
-  font-size: 72px;
-  line-height: 1.18;
+  margin: 0 0 20px 0;
+  padding: 0;
 
+  font-size: 48px;
+  line-height: 1.67;
   font-family: $font-title;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 0.05em;
-  padding: 0;
-  margin: 0;
   color: $primory-white;
 
-  @media screen and (max-width: 768px) {
-    font-size: 48px;
-    line-height: 1.67;
-    margin-bottom: 20px;
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+    font-size: 72px;
+    line-height: 1.18;
   }
 }
 
 .header-text {
-  display: inline-block;
+  display: block;
   margin: 0;
   padding: 0;
-  font-weight: normal;
 
+  max-width: 306px;
+  font-weight: normal;  
   font-size: 16px;
   line-height: 1.62;
+  letter-spacing: 0.02em;
   color: $primory-text-color-dark-fone;
 
-  letter-spacing: 0.02em;
-  @media screen and (max-width: $mobile) {
-    max-width: 306px;
-  }
-  @media screen and (max-width: $tablet) {
+  @media screen and (min-width: $tablet) {
     max-width: 370px;
   }
 
-  @media screen and (min-width: 769px) {
-    display: block;
+  @media screen and (min-width: $desktop) {
     font-size: 18px;
     line-height: 1.67;
     max-width: 486px;
     margin-top: 20px;
   }
 }
+
 .button-line {
   outline-style: none;
   border-style: none;
@@ -257,72 +235,73 @@ path {
     width: 18px;
   }
 }
+
 .radio-lines {
   position: absolute;
-  right: 50px;
+  display: none;
   top: 50%;
-  display: block;
   width: 18px;
   height: 26px;
   line-height: 0;
   flex-wrap: wrap;
   font-size: 0;
   text-align: end;
+
   & li:not(:last-child) {
     margin-bottom: 10px;
   }
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
+
+  @media screen and (min-width: $tablet) {
+    display: block;
     right: 39px;
   }
-  @media screen and (max-width: $mobile) {
-    display: none;
+  @media screen and (min-width: $desktop) {
+    right: 50px;    
   }
 }
 
 .contacts-header {
-  @media screen and (max-width: $mobile) {
-    margin-top: 64px;
-  }
-  @media screen and (min-width: 481px) and (max-width: $tablet) {
+  margin-top: 64px;
+
+  @media screen and (min-width: $tablet) {
     display: flex;
-    align-items: center;
-    margin-right: 39px;
-    margin-top: 40px;
-    margin-left: auto;
     flex-direction: column-reverse;
+    align-items: center;
+    // justify-content: center;
+    margin-top: 40px;
+    margin-right: 39px;
+    margin-left: auto;
   }
-  @media screen and (min-width: 769px) {
-    display: flex;
-    align-items: baseline;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    // align-items: baseline;
     margin-left: auto;
     margin-right: 55px;
   }
 }
 
 .soc-header {
-  @media screen and (max-width: $mobile) {
-    display: block;
-    margin-top: 64px;
-    margin-left: 100px;
-  }
-  @media screen and (min-width: 481px) {
-    display: flex;
-    align-items: flex-end;
+  display: block;
+  margin-top: 64px;
+  margin-left: 100px;
+
+  @media screen and (min-width: $tablet) {
     position: absolute;
+    display: flex;
+    margin: 0;
+    align-items: flex-end;
     left: 76px;
     bottom: 140px;
     transform: rotate(-90deg);
     transform-origin: left;
   }
-  @media screen and (min-width: 769px) {
+  
+  @media screen and (min-width: $desktop) {
     left: 82px;
   }
 }
 
 .line {
-  @media screen and (min-width: 481px) {
-    margin-right: 40px;
-  }
   &::before {
     content: '';
     display: block;
@@ -333,55 +312,59 @@ path {
     height: 1px;
     background: $translucent-text-dark-fone;
   }
+
+  @media screen and (min-width: $tablet) {
+    margin: 0 40px 0 0;
+  }
+  
 }
 
 .soc-link-header {
   display: block;
+
+  font-family: $font-text;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
   text-decoration: none;
-  border: 1px solid transparent;
+  
   color: $primory-black;
   transition: color $trans-time-and-bezier;
 
-  @media screen and (max-width: $mobile) {
-    font-family: $font-text;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.36;
-    letter-spacing: 0.2em;
-
-    &:not(:last-child) {
-      margin-bottom: 24px;
-    }
+  &:not(:last-child) {
+    margin-bottom: 24px;
   }
+
   &:hover,
   &:focus {
     outline: none;
     color: $accent-orange;
   }
+
+  @media screen and (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .button-slide {
-  @media screen and (max-width: $mobile) {
-    display: none;
-  }
-  @media screen and (min-width: 481px) {
-    margin-top: 181px;
-    // margin-left: 424px;
-    margin-right: 39px;
-    display: flex;
+  display: none;
 
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    margin-top: 181px;
+    margin-right: 39px;
     justify-content: flex-end;
   }
-  @media screen and (min-width: 769px) {
+
+  @media screen and (min-width: $desktop) {
     margin-top: 142px;
   }
 }
 
-.slide-bottom:not(:first-child) {
-  margin-left: 26px;
-  // margin-top: auto;
-}
 .slide-bottom {
   outline-style: none;
   background-color: transparent;
@@ -389,6 +372,10 @@ path {
   color: $translucent-text-dark-fone;
   padding: 0;
   transition: color $trans-time-and-bezier;
+
+  &:not(:first-child) {
+    margin-left: 26px;
+  }
 
   &::after {
     content: '';
