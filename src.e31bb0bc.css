@@ -1719,6 +1719,9 @@ path {
 }
 
 .btn-dark-fone, .btn-lite-fone-header, .btn-lite-fone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 160px;
   height: 40px;
   border: 1px solid #FF6C00;
@@ -1730,6 +1733,7 @@ path {
   line-height: 16px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  text-decoration: none;
   background-color: transparent;
   outline-style: none;
 }
